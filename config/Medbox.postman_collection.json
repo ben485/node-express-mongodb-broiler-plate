@@ -1,0 +1,840 @@
+{
+	"info": {
+		"_postman_id": "758b0fcb-5286-4d7b-8d29-35a82c286ebe",
+		"name": "Medbox",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30529588"
+	},
+	"item": [
+		{
+			"name": "Medbox-Mobile-App",
+			"item": [
+				{
+					"name": "Auth",
+					"item": [
+						{
+							"name": "register",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"firstName\": \"Benjamin\",\r\n    \"lastName\": \"Andoh\",\r\n    \"email\": \"benandoh1996@gmail.com\",\r\n    \"phoneNumber\": \"0241164088\",\r\n    \"password\":\"123456789\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://abibiman-api.onrender.com/users/register",
+									"protocol": "https",
+									"host": [
+										"abibiman-api",
+										"onrender",
+										"com"
+									],
+									"path": [
+										"users",
+										"register"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "login",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"benandoh1996@gmail.com\",\r\n    \"password\": \"123456789\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://abibiman-api.onrender.com/users/login",
+									"protocol": "https",
+									"host": [
+										"abibiman-api",
+										"onrender",
+										"com"
+									],
+									"path": [
+										"users",
+										"login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "forgetPassword",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"benandoh6543@gmail.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://abibiman-api.onrender.com/users/forget-password",
+									"protocol": "https",
+									"host": [
+										"abibiman-api",
+										"onrender",
+										"com"
+									],
+									"path": [
+										"users",
+										"forget-password"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "resetPassword",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "authorization",
+										"value": "6727028842",
+										"description": "An authorization key generated when a user try to reset password. Without this key a user cannot reset his /her password.",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"benandoh6543@gmail.com\",\r\n     \"newPassword\": \"123456789\",\r\n     \"confirmPassword\": \"123456789\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://abibiman-api.onrender.com/users/user-reset-password",
+									"protocol": "https",
+									"host": [
+										"abibiman-api",
+										"onrender",
+										"com"
+									],
+									"path": [
+										"users",
+										"user-reset-password"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "changePassword",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Basic eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InVzZXJJRCI6IkJBLTgxMTIzNTMyIiwicm9sZSI6IlVzZXIiLCJpc0ZpcnN0TG9nZ2VkaW4iOiJ0cnVlIn0sImlhdCI6MTY5ODA3NTM5OCwiZXhwIjoxNjk4MTYxNzk4fQ.gnrkNB3iYjQCNfqmEJYtCGIpNvWrFRNNuBr9sABQENI",
+										"description": "Auth Key",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n     \"email\": \"benandoh6543@gmail.com\",\r\n     \"newPassword\": \"we123456\",\r\n     \"confirmPassword\": \"we123456\",\r\n     \"oldPassword\": \"we123456\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://abibiman-api.onrender.com/users/user-change-password",
+									"protocol": "https",
+									"host": [
+										"abibiman-api",
+										"onrender",
+										"com"
+									],
+									"path": [
+										"users",
+										"user-change-password"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "VerifyOtpSentToUser",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"benandoh1996@gmail.com\",\r\n    \"otp\": \"3924\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://abibiman-api.onrender.com/users/tests/verify-otp",
+									"protocol": "https",
+									"host": [
+										"abibiman-api",
+										"onrender",
+										"com"
+									],
+									"path": [
+										"users",
+										"tests",
+										"verify-otp"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "resendOtp",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InVzZXJJRCI6IlVCQS02NzcxMTYwMiIsInZlcmlmeVVzZXIiOnRydWUsInJvbGUiOiJVc2VyIiwib25Cb2FyZGluZyI6InBlbmRpbmcifSwiaWF0IjoxNjk5OTg3MTY1LCJleHAiOjE3MDAwNzM1NjV9.IHg_Fr4nMlUSZYEH0oGb6MieSTOZ6Gvy8-bT0m-3y5s",
+										"description": "Auth Key",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"benandoh1996@gmail.com\",\r\n    \"phoneNumber\": \"0241164088\",\r\n    \"name\": \"Ben Andoh\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://abibiman-api.onrender.com/users/tests/resend-otp",
+									"protocol": "https",
+									"host": [
+										"abibiman-api",
+										"onrender",
+										"com"
+									],
+									"path": [
+										"users",
+										"tests",
+										"resend-otp"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Medbox-Web-App",
+			"item": [
+				{
+					"name": "Auth",
+					"item": [
+						{
+							"name": "register",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"firstName\": \"Benjamin\",\r\n    \"lastName\": \"Andoh\",\r\n    \"email\": \"benandoh1996344@gmail.com\",\r\n    \"phoneNumber\": \"024116408822\",\r\n    \"pharmacy\": \"Beditta pharmacy\",\r\n    \"region\": \"Greater Accra\",\r\n    \"district\": \"Ga East\",\r\n    \"city\": \"Achimota\",\r\n    \"branch\": 2,\r\n    \"password\":\"123456789\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://medbox-web-app.onrender.com/auth/register",
+									"protocol": "https",
+									"host": [
+										"medbox-web-app",
+										"onrender",
+										"com"
+									],
+									"path": [
+										"auth",
+										"register"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "login",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"benandoh1996@gmail.com\",\r\n    \"password\": \"123456789\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://medbox-web-app.onrender.com/auth/login",
+									"protocol": "https",
+									"host": [
+										"medbox-web-app",
+										"onrender",
+										"com"
+									],
+									"path": [
+										"auth",
+										"login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "forgetPassword",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"benandoh1996@gmail.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://medbox-web-app.onrender.com/auth/forget-password",
+									"protocol": "https",
+									"host": [
+										"medbox-web-app",
+										"onrender",
+										"com"
+									],
+									"path": [
+										"auth",
+										"forget-password"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "resetPassword",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "authorization",
+										"value": "6727028842",
+										"description": "An authorization key generated when a user try to reset password. Without this key a user cannot reset his /her password.",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"benandoh6543@gmail.com\",\r\n     \"newPassword\": \"123456789\",\r\n     \"confirmPassword\": \"123456789\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://medbox-web-app.onrender.com/auth/user-reset-password",
+									"protocol": "https",
+									"host": [
+										"medbox-web-app",
+										"onrender",
+										"com"
+									],
+									"path": [
+										"auth",
+										"user-reset-password"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "changePassword",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Basic eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InVzZXJJRCI6IkJBLTgxMTIzNTMyIiwicm9sZSI6IlVzZXIiLCJpc0ZpcnN0TG9nZ2VkaW4iOiJ0cnVlIn0sImlhdCI6MTY5ODA3NTM5OCwiZXhwIjoxNjk4MTYxNzk4fQ.gnrkNB3iYjQCNfqmEJYtCGIpNvWrFRNNuBr9sABQENI",
+										"description": "Auth Key",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n     \"email\": \"benandoh6543@gmail.com\",\r\n     \"newPassword\": \"we123456\",\r\n     \"confirmPassword\": \"we123456\",\r\n     \"oldPassword\": \"we123456\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://medbox-web-app.onrender.com/auth/user-change-password",
+									"protocol": "https",
+									"host": [
+										"medbox-web-app",
+										"onrender",
+										"com"
+									],
+									"path": [
+										"auth",
+										"user-change-password"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "VerifyOtpSentToUser",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"benandoh1996@gmail.com\",\r\n    \"otp\": \"3924\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://medbox-web-app.onrender.com/auth/tests/verify-otp",
+									"protocol": "https",
+									"host": [
+										"medbox-web-app",
+										"onrender",
+										"com"
+									],
+									"path": [
+										"auth",
+										"tests",
+										"verify-otp"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "resendOtp",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InVzZXJJRCI6IlVCQS02NzcxMTYwMiIsInZlcmlmeVVzZXIiOnRydWUsInJvbGUiOiJVc2VyIiwib25Cb2FyZGluZyI6InBlbmRpbmcifSwiaWF0IjoxNjk5OTg3MTY1LCJleHAiOjE3MDAwNzM1NjV9.IHg_Fr4nMlUSZYEH0oGb6MieSTOZ6Gvy8-bT0m-3y5s",
+										"description": "Auth Key",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"benandoh1996@gmail.com\",\r\n    \"phoneNumber\": \"0241164088\",\r\n    \"name\": \"Ben Andoh\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://medbox-web-app.onrender.com/auth/tests/resend-otp",
+									"protocol": "https",
+									"host": [
+										"medbox-web-app",
+										"onrender",
+										"com"
+									],
+									"path": [
+										"auth",
+										"tests",
+										"resend-otp"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "fetchUserProfileData",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Basic eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InVzZXJJRCI6IlVCQS00MTcwODkwNyIsInZlcmlmeVVzZXIiOnRydWV9LCJpYXQiOjE3MDUyNTM2OTksImV4cCI6MTcwNTM0MDA5OX0.OQ77o0B5_YgqtWJz5x48aHS7KdBhRvlorTDlkns2X30",
+										"description": "Auth token",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://medbox-web-app.onrender.com/auth/user-profile",
+									"protocol": "https",
+									"host": [
+										"medbox-web-app",
+										"onrender",
+										"com"
+									],
+									"path": [
+										"auth",
+										"user-profile"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "updateUserData",
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Basic eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InVzZXJJRCI6IlVCQS00MTcwODkwNyIsInZlcmlmeVVzZXIiOnRydWV9LCJpYXQiOjE3MDUyNTM2OTksImV4cCI6MTcwNTM0MDA5OX0.OQ77o0B5_YgqtWJz5x48aHS7KdBhRvlorTDlkns2X30",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"phoneNumber\": \"0241164099\",\r\n    \"pharmacy\": \"Beditta pharmacy\"\r\n \r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://medbox-web-app.onrender.com/auth/update-user-data",
+									"protocol": "https",
+									"host": [
+										"medbox-web-app",
+										"onrender",
+										"com"
+									],
+									"path": [
+										"auth",
+										"update-user-data"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Region&Districts",
+					"item": [
+						{
+							"name": "saveRegions",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"region\": \"Ashanti Region\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://medbox-web-app.onrender.com/location/regions",
+									"protocol": "https",
+									"host": [
+										"medbox-web-app",
+										"onrender",
+										"com"
+									],
+									"path": [
+										"location",
+										"regions"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "saveDistrcts",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"district\": \"Ga North\",\r\n    \"regionCode\": \"Ashanti-Region\"\r\n\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://medbox-web-app.onrender.com/location/districts",
+									"protocol": "https",
+									"host": [
+										"medbox-web-app",
+										"onrender",
+										"com"
+									],
+									"path": [
+										"location",
+										"districts"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "fetchRegions",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://medbox-web-app.onrender.com/location/regions",
+									"protocol": "https",
+									"host": [
+										"medbox-web-app",
+										"onrender",
+										"com"
+									],
+									"path": [
+										"location",
+										"regions"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "FetchDestricts",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://medbox-web-app.onrender.com/location/districts?regionCode=Ashanti-Region",
+									"protocol": "https",
+									"host": [
+										"medbox-web-app",
+										"onrender",
+										"com"
+									],
+									"path": [
+										"location",
+										"districts"
+									],
+									"query": [
+										{
+											"key": "regionCode",
+											"value": "Ashanti-Region"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "patients",
+					"item": [
+						{
+							"name": "add new patients",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Basic eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InVzZXJJRCI6IlVCQS00MTcwODkwNyIsInZlcmlmeVVzZXIiOnRydWV9LCJpYXQiOjE3MDY3NzkyNTIsImV4cCI6MTcwNjg2NTY1Mn0.MF3XmvvxqdCyvm1zJMVuVIuyDzDQMnSOdkp6LjHOAcw",
+										"description": "Auth Token",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": " {\r\n  \"firstName\": \"John\",\r\n  \"lastName\": \"Doe\",\r\n  \"dateOfBirth\": \"1990-01-01\",\r\n  \"telephone\": \"+1234567890\",\r\n  \"gender\": \"Male\",\r\n  \"emergencyContact\": \"+1987654321\",\r\n  \"maritalStatus\": \"Single\",\r\n  \"email\": \"john.doe@example.com\",\r\n  \"location\": \"City, Country\",\r\n  \"allergies\": [{\"allergy\": \"Pollen\", \"trigger\": \"Seasonal\"}],\r\n  \"medicalCondition\": [{\"disease\": \"Hypertension\"}],\r\n  \"socialHabits\": [{\"habit\": \"Non-smoker\"}, {\"habit\": \"Binge-Drinker\"}],\r\n  \"pharmacyID\": \"aqxxQ4Jy8OzB94259519\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://medbox-web-app.onrender.com/patients/personal-data",
+									"protocol": "https",
+									"host": [
+										"medbox-web-app",
+										"onrender",
+										"com"
+									],
+									"path": [
+										"patients",
+										"personal-data"
+									]
+								},
+								"description": "**Data Model**\n\n### Patient\n\nRepresents an individual patient in the healthcare system.\n\n#### Attributes\n\n- **firstName** (String, required): First name of the patient.\n- **lastName** (String, required): Last name of the patient.\n- **dateOfBirth** (String, required): Date of birth of the patient.\n- **telephone** (String, required): Telephone number of the patient.\n- **gender** (String, required): Gender of the patient.\n- **emergencyContact** (String, default: ''): Emergency contact information of the patient.\n- **maritalStatus** (String, default: 'N/A'): Marital status of the patient.\n- **email** (String, default: 'N/A'): Email address of the patient.\n- **location** (String, default: 'N/A'): Current location of the patient.\n- **allergies** (Array of Objects): List of allergies associated with the patient, each containing an `allergy` and its `trigger`.\n- **medicalCondition** (Array of Objects): List of medical conditions associated with the patient, each containing a `disease`.\n- **socialHabits** (Array of Objects): List of social habits associated with the patient, each containing a `habit`.\n- **patientPharmacyID** (String, required): Automatically generated ID for the patient in the pharmacy.\n- **pharmacyID** (String, required): ID of the pharmacy associated with the patient.\n- **status** (Boolean, default: true): Status indicating whether the patient is active or not."
+							},
+							"response": []
+						},
+						{
+							"name": "List all patients",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Basic eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InVzZXJJRCI6IlVCQS00MTcwODkwNyIsInZlcmlmeVVzZXIiOnRydWV9LCJpYXQiOjE3MDY3NzkyNTIsImV4cCI6MTcwNjg2NTY1Mn0.MF3XmvvxqdCyvm1zJMVuVIuyDzDQMnSOdkp6LjHOAcw",
+										"description": "Auth Autoken",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://medbox-web-app.onrender.com/patients/personal-data/aqxxQ4Jy8OzB94259519",
+									"protocol": "https",
+									"host": [
+										"medbox-web-app",
+										"onrender",
+										"com"
+									],
+									"path": [
+										"patients",
+										"personal-data",
+										"aqxxQ4Jy8OzB94259519"
+									]
+								},
+								"description": "### List all patients\n\nNote: Authentication token is required in order to access this point"
+							},
+							"response": []
+						},
+						{
+							"name": "One patient",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Basic eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InVzZXJJRCI6IlVCQS00MTcwODkwNyIsInZlcmlmeVVzZXIiOnRydWV9LCJpYXQiOjE3MDY3NzkyNTIsImV4cCI6MTcwNjg2NTY1Mn0.MF3XmvvxqdCyvm1zJMVuVIuyDzDQMnSOdkp6LjHOAcw",
+										"description": "Auth Autoken",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://medbox-web-app.onrender.com/patients/personal-data/details/JD-097223765",
+									"protocol": "https",
+									"host": [
+										"medbox-web-app",
+										"onrender",
+										"com"
+									],
+									"path": [
+										"patients",
+										"personal-data",
+										"details",
+										"JD-097223765"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update patient data",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": " {\r\n  \"firstName\": \"John\",\r\n  \"lastName\": \"Doe\",\r\n  \"dateOfBirth\": \"1990-01-01\",\r\n  \"telephone\": \"+1234567890\",\r\n  \"gender\": \"Male\",\r\n  \"emergencyContact\": \"+1987654321\",\r\n  \"maritalStatus\": \"Single\",\r\n  \"email\": \"john.doe@example.com\",\r\n  \"location\": \"City, Country\",\r\n  \"allergies\": [{\"allergy\": \"Pollen\", \"trigger\": \"Seasonal\"}],\r\n  \"medicalCondition\": [{\"disease\": \"Hypertension\"}],\r\n  \"socialHabits\": [{\"habit\": \"Non-smoker\"}],\r\n  \"pharmacyID\": \"pharmacy123\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://medbox-web-app.onrender.com/patients/personal-data/<id>",
+									"protocol": "https",
+									"host": [
+										"medbox-web-app",
+										"onrender",
+										"com"
+									],
+									"path": [
+										"patients",
+										"personal-data",
+										"<id>"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "deactivate patient from pharmacy list",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": " {\r\n  \"firstName\": \"John\",\r\n  \"lastName\": \"Doe\",\r\n  \"dateOfBirth\": \"1990-01-01\",\r\n  \"telephone\": \"+1234567890\",\r\n  \"gender\": \"Male\",\r\n  \"emergencyContact\": \"+1987654321\",\r\n  \"maritalStatus\": \"Single\",\r\n  \"email\": \"john.doe@example.com\",\r\n  \"location\": \"City, Country\",\r\n  \"allergies\": [{\"allergy\": \"Pollen\", \"trigger\": \"Seasonal\"}],\r\n  \"medicalCondition\": [{\"disease\": \"Hypertension\"}],\r\n  \"socialHabits\": [{\"habit\": \"Non-smoker\"}],\r\n  \"pharmacyID\": \"pharmacy123\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://medbox-web-app.onrender.com/patients/personal/deactivate/<id>",
+									"protocol": "https",
+									"host": [
+										"medbox-web-app",
+										"onrender",
+										"com"
+									],
+									"path": [
+										"patients",
+										"personal",
+										"deactivate",
+										"<id>"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"description": "This API documentation provides details about the Patient API, which manages patient information in a healthcare system. The API is implemented using Node.js and MongoDB with the Mongoose ODM."
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,143 @@
+{
+	"info": {
+		"_postman_id": "ec96d6db-a93d-414b-96f0-74f6cf24f2bf",
+		"name": "Local test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30529588"
+	},
+	"item": [
+		{
+			"name": "http://localhost:4000/users/login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n     \"email\": \"benandoh1996@gmail.com\",\r\n    \"password\": \"123456789\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/auth/provider/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"auth",
+						"provider",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:4000/users/test/testotp",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InVzZXJJRCI6IlVCQS02NzcxMTYwMiIsInZlcmlmeVVzZXIiOnRydWUsInJvbGUiOiJVc2VyIiwib25Cb2FyZGluZyI6InBlbmRpbmcifSwiaWF0IjoxNjk5OTg3MTY1LCJleHAiOjE3MDAwNzM1NjV9.IHg_Fr4nMlUSZYEH0oGb6MieSTOZ6Gvy8-bT0m-3y5s",
+						"description": "Auth Key",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"benandoh1996@gmail.com\",\r\n    \"phoneNumber\": \"0241164088\",\r\n    \"name\": \"Ben Andoh\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://abibiman-api.onrender.com/users/tests/resend-otp",
+					"protocol": "https",
+					"host": [
+						"abibiman-api",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"users",
+						"tests",
+						"resend-otp"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:4000/users/tests/verify-otp",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"benandoh1996@gmail.com\",\r\n    \"otp\": \"5778\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/users/tests/verify-otp",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"users",
+						"tests",
+						"verify-otp"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:4000/metrics/current-readings/UBA-67711602",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Basic eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InVzZXJJRCI6IlVCQS02NzcxMTYwMiIsInZlcmlmeVVzZXIiOnRydWUsInJvbGUiOiJVc2VyIiwib25Cb2FyZGluZyI6InBlbmRpbmcifSwiaWF0IjoxNzAwODE4NjY3LCJleHAiOjE3MDA5MDUwNjd9.i8PlYZQ6V1e9qG0Gvp-e7qKBvHqoXsnzS5sW1X_LlP0",
+						"description": "Auth Key",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:4000/metrics/current-readings/UBA-67711602",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"metrics",
+						"current-readings",
+						"UBA-67711602"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
